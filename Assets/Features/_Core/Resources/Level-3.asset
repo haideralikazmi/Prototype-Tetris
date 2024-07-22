@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b99cea39720d41fd9724e071f90adac, type: 3}
+  m_Name: Level-3
+  m_EditorClassIdentifier: 
+  SwitchesOnGrid:
+  - {x: 0, y: 0}
+  - {x: 0, y: 6}
+  - {x: 0, y: 4}
+  - {x: 2, y: 0}
+  - {x: 2, y: 1}
+  - {x: 2, y: 6}
+  - {x: 3, y: 1}
+  - {x: 3, y: 3}
+  - {x: 4, y: 3}
+  - {x: 4, y: 6}
+  - {x: 4, y: 7}
+  - {x: 5, y: 3}
+  - {x: 6, y: 0}
+  - {x: 6, y: 6}
+  - {x: 7, y: 3}
+  ShapeTypes:
+  - {fileID: 6763353442467283115, guid: 65099b7329be644b18b46f0fee1992a7, type: 3}
+  - {fileID: 6763353442467283115, guid: 65099b7329be644b18b46f0fee1992a7, type: 3}
+  - {fileID: 4791317698744451468, guid: 59c7c9614351246c9837385f52538eac, type: 3}
+  - {fileID: 414028712705187920, guid: 520fd39d99a524235bc3dbdbdd7cd62b, type: 3}
+  - {fileID: 414028712705187920, guid: 03c9d2722894b4393be601635521186b, type: 3}
+  - {fileID: 414028712705187920, guid: 03c9d2722894b4393be601635521186b, type: 3}
+  - {fileID: 4791317698744451468, guid: 905ac45e18beb4b67a8485e53681f895, type: 3}
+  - {fileID: 4791317698744451468, guid: 905ac45e18beb4b67a8485e53681f895, type: 3}
+  - {fileID: 4791317698744451468, guid: 905ac45e18beb4b67a8485e53681f895, type: 3}
+  - {fileID: 6763353442467283115, guid: 5c428e95a0bb5464bb7d1366d2e23518, type: 3}
+  - {fileID: 6763353442467283115, guid: 5c428e95a0bb5464bb7d1366d2e23518, type: 3}
+  - {fileID: 4791317698744451468, guid: 905ac45e18beb4b67a8485e53681f895, type: 3}
+  - {fileID: 414028712705187920, guid: 520fd39d99a524235bc3dbdbdd7cd62b, type: 3}
+  - {fileID: 4791317698744451468, guid: 59c7c9614351246c9837385f52538eac, type: 3}
+  - {fileID: 8023244428649145430, guid: 6b0a2c225169f4b09bea1cec4f401379, type: 3}
+  - {fileID: 8023244428649145430, guid: 6b0a2c225169f4b09bea1cec4f401379, type: 3}
