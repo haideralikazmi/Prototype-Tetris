@@ -21,9 +21,7 @@ namespace HAK.Gameplay.Grid
         private List<Cell> _currentlyOccupiedCells;
         private Vector2Int _currentClosestCell;
         private List<Vector2Int> _switchesOnGrid;
-        private List<Vector2Int> _inActiveCellsOnGrid;
         private LevelGenerationData _levelData;
-        private int _shapesOnGrid;
 
         
         public ITray TrayHandler { private get; set; }
@@ -53,7 +51,6 @@ namespace HAK.Gameplay.Grid
             _row0ffset = _baseTile.width;
             _column0ffset = _baseTile.height;
             _switchesOnGrid = _levelData.SwitchesOnGrid;
-            _inActiveCellsOnGrid = _levelData.InActiveTilesOnGrid;
         }
         
         public void GenerateGrid()
@@ -135,7 +132,6 @@ namespace HAK.Gameplay.Grid
                 shape.SetPlacementPoint(_currentClosestCell);
                 SetOccupationStateOfCells(true);
                 RemoveHighlightFromPreviousCells();
-                IncrementShapeCount();
                 //CheckIfLevelCompleted();
                 IncreaseBatteryHealth();
                 return;
@@ -152,22 +148,10 @@ namespace HAK.Gameplay.Grid
             LevelProgressionHandler.DecreaseBatteryHealth();
         }
         
-
-        private void IncrementShapeCount()
-        {
-            _shapesOnGrid++;
-        }
-
-        private void DecrementShapeCount()
-        {
-            _shapesOnGrid--;
-        }
-        
         public void OnReselectionOfShape(List<Vector2Int> shapeTiles)
         {
-            DecrementShapeCount();
             DecreaseBatteryHealth();
-            for (var i = 0; i < shapeTiles.Count; i++)
+            for (var i = 0; i < shapeTiles.Count; i++) 
             {
                 var tileIndex = shapeTiles[i];
                 _grid[tileIndex.x,tileIndex.y].SetOccupationState(false);
