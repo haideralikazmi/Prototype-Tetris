@@ -84,7 +84,7 @@ namespace HAK.Gameplay.Shape
             
             var offSet = new Vector3(xOffset, 0, zOffset);
             targetPosition += offSet;
-            _chargerTransform.position = Vector3.Lerp(_chargerTransform.position, targetPosition, movementSpeed);
+            _chargerTransform.position = targetPosition; //Vector3.Lerp(_chargerTransform.position, targetPosition, movementSpeed);
         }
 
         public void PlaceShapeOnCell(Vector3 cellPosition)

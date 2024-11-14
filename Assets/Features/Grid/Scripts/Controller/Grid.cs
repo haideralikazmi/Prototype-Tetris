@@ -29,7 +29,7 @@ namespace HAK.Gameplay.Grid
 
         public override void PreInitialize()
         {
-            var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, 1);
+            var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, 0);
             _levelData = Configs.LevelConfig.LevelData[currentLevel];
         }
         
@@ -132,25 +132,13 @@ namespace HAK.Gameplay.Grid
                 shape.SetPlacementPoint(_currentClosestCell);
                 SetOccupationStateOfCells(true);
                 RemoveHighlightFromPreviousCells();
-                //CheckIfLevelCompleted();
-                IncreaseBatteryHealth();
                 return;
             }
             TrayHandler.MoveShapeToOriginalPosition();
         }
         
-        private void IncreaseBatteryHealth()
-        {
-            LevelProgressionHandler.IncreaseBatteryHealth();
-        }
-        private void DecreaseBatteryHealth()
-        {
-            LevelProgressionHandler.DecreaseBatteryHealth();
-        }
-        
         public void OnReselectionOfShape(List<Vector2Int> shapeTiles)
         {
-            DecreaseBatteryHealth();
             for (var i = 0; i < shapeTiles.Count; i++) 
             {
                 var tileIndex = shapeTiles[i];

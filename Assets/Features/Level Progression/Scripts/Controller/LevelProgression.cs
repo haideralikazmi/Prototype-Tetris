@@ -10,21 +10,12 @@ namespace HAK.Gameplay.LevelProgress
     {
         
     [SerializeField] private LevelProgressionView _view;
-    private int _plugCount;
 
  	public ITray TrayHandler { private get; set; }
     
     public override void Initialize()
     {
         _view.Initialize(this);
-        var currentLevel = GetCurrentLevelCount();
-        EnableCurrentLevelBattery();
-        _plugCount = Configs.LevelConfig.LevelData[currentLevel].ShapeTypes.Count;
-    }
-
-    void EnableCurrentLevelBattery()
-    {
-        _view.EnableBattery(GetCurrentLevelCount());
     }
     
 
@@ -44,12 +35,6 @@ namespace HAK.Gameplay.LevelProgress
     {
         _view.DecreaseBatteryHealth();
     }
-    
-    private float GetBatteryHealthBasedOnShapes()
-    { 
-        var batteryHealthValue = 1.0f/_plugCount;
-        return batteryHealthValue;
-    } 
 
     void ILevelProgression.OnNextButtonClicked()
     {
@@ -81,14 +66,14 @@ namespace HAK.Gameplay.LevelProgress
         var levelCount = Configs.LevelConfig.LevelData.Count;
         if (currentLevel >= levelCount)
         {
-            currentLevel = 1;
+            currentLevel = 0;
         }
         SetLevel(currentLevel);
     }
             
     private int GetCurrentLevelCount()
     {
-        var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, 1);
+        var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, 0);
         return currentLevel;
     }
     private void SetLevel(int level)

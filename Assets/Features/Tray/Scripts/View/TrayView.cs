@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace HAK.Gameplay.Shape
 {
-    public class TrayView: BaseView, IPointerDownHandler, IDragHandler, IEndDragHandler
+    public class TrayView: BaseView, IPointerUpHandler,IPointerDownHandler, IDragHandler, IEndDragHandler
     {
         [SerializeField] private TrayViewRefs _viewRefs;
         private ITray _handler;
@@ -62,18 +62,25 @@ namespace HAK.Gameplay.Shape
         
         public void OnPointerDown(PointerEventData eventData)
         {
-            _currentlySelecedShape = SelectShape(eventData.position);
+            var position = eventData.position;
+            _currentlySelecedShape = SelectShape(position);
             if (_currentlySelecedShape != null)
             {
                 _currentlySelecedShape.SetSelectedState();
-                var placementStatus = _currentlySelecedShape.HasBeenPlaced();
-                if (placementStatus)
-                {
-                    var shapeTiles = _currentlySelecedShape.GetTileIndex();
-                    var anchorPoint = _currentlySelecedShape.GetPlacementPoint();
-                    _handler.OnReselectionOfShape(shapeTiles, anchorPoint);
-                    _currentlySelecedShape.SetPlacementState(false);
-                }
+                PickUpShape(position);
+                OnReselectionOfShape(_currentlySelecedShape);
+            }
+        }
+
+        private void OnReselectionOfShape(BaseShape selectedShape)
+        {
+            var placementStatus = _currentlySelecedShape.HasBeenPlaced();
+            if (placementStatus)
+            {
+                var shapeTiles = selectedShape.GetTileIndex();
+                var anchorPoint = selectedShape.GetPlacementPoint();
+                _handler.OnReselectionOfShape(shapeTiles, anchorPoint);
+                selectedShape.SetPlacementState(false);
             }
         }
         
@@ -89,6 +96,12 @@ namespace HAK.Gameplay.Shape
         }
         
         public void OnEndDrag(PointerEventData eventData)
+        {
+            _isDragging = false;
+            if(_currentlySelecedShape!=null){  OnTrayReleased();}
+        }
+        
+        public void OnPointerUp(PointerEventData eventData)
         {
             _isDragging = false;
             if(_currentlySelecedShape!=null){  OnTrayReleased();}

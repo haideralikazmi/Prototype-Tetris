@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
   DefaultLevel: 1
-  DefaultGridWidth: 8
-  DefaultGridHeight: 8
+  DefaultGridWidth: 7
+  DefaultGridHeight: 9
   LevelData:
-  - {fileID: 11400000, guid: bd342ba49eb3e424aaf259a0ba1d15a0, type: 2}
-  - {fileID: 11400000, guid: d690764bcd38b4c88884fe659f7c4276, type: 2}
-  - {fileID: 11400000, guid: 47e484024cc7b42d1870cab3552f62ad, type: 2}
+  - {fileID: 11400000, guid: 6fbde10a4ae2a488487b562a90cac2a0, type: 2}
   - {fileID: 11400000, guid: 6fbde10a4ae2a488487b562a90cac2a0, type: 2}

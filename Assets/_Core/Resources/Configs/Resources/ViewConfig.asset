@@ -24,12 +24,12 @@ MonoBehaviour:
   ShapePickUpSpeed: 0
   XOffsetonShapePickup: 0
   YOffsetonShapePickup: 1
-  ZOffsetonShapePickup: 4
+  ZOffsetonShapePickup: 1.25
   ShapePositionResetDuration: 0.25
-  ShapePlacementDuration: 0.1
-  ShapePlacementYOffset: 0.65
-  ShapeZoomOutScale: 0.5
+  ShapePlacementDuration: 0.15
+  ShapePlacementYOffset: 0.6
+  ShapeZoomOutScale: 0.6
   ShapeZoomInScale: 1
-  ShapeZoomDuration: 0.125
+  ShapeZoomDuration: 0.1
   LoadingFillDelta: 1
   LoadingBarthreshold: 0.9
