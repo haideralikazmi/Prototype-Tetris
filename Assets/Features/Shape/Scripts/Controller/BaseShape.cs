@@ -79,26 +79,24 @@ namespace HAK.Gameplay.Shape
         
         public void SetShapePosition(Vector3 targetPosition, float movementSpeed)
         {
-            var xOffset = Configs.ViewConfig.XOffsetonShapePickup;
             var zOffset = Configs.ViewConfig.ZOffsetonShapePickup;
-            
-            var offSet = new Vector3(xOffset, 0, zOffset);
-            targetPosition += offSet;
-            _chargerTransform.position = targetPosition; //Vector3.Lerp(_chargerTransform.position, targetPosition, movementSpeed);
+            targetPosition.z += zOffset;
+            _chargerTransform.position = Vector3.Lerp(_chargerTransform.position, targetPosition, movementSpeed);
         }
 
         public void PlaceShapeOnCell(Vector3 cellPosition)
         {
             var placementDuration = Configs.ViewConfig.ShapePlacementDuration;
+            var placementEase = Configs.ViewConfig.ShapePlacementAnimationCurve;
             cellPosition.y += Configs.ViewConfig.ShapePlacementYOffset;
-            _chargerTransform.DOMove(cellPosition,placementDuration);
+            _chargerTransform.DOMove(cellPosition,placementDuration).SetEase(placementEase);
         }
         
 
         public void ReturnToOriginalPosition()
         {
-            var returnDuration = Configs.ViewConfig.ShapePositionResetDuration;
-            _chargerTransform.DOMove(_defaultPosition,returnDuration).SetEase(Ease.OutQuart);
+            var returnDuration = Configs.ViewConfig.ShapeReturnToTrayDuration;
+            _chargerTransform.DOMove(_defaultPosition,returnDuration).SetEase(Ease.InOutQuad);
             ZoomOutScale();
         }
     }
