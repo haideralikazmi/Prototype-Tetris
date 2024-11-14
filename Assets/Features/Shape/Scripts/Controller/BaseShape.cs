@@ -81,7 +81,7 @@ namespace HAK.Gameplay.Shape
         {
             var zOffset = Configs.ViewConfig.ZOffsetonShapePickup;
             targetPosition.z += zOffset;
-            _chargerTransform.position = Vector3.Lerp(_chargerTransform.position, targetPosition, movementSpeed);
+            _chargerTransform.position = targetPosition;
         }
 
         public void PlaceShapeOnCell(Vector3 cellPosition)

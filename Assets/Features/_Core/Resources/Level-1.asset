@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Level-1
   m_EditorClassIdentifier: 
   SwitchesOnGrid:
-  - {x: 0, y: 0}
-  - {x: 0, y: 6}
-  - {x: 6, y: 6}
-  InActiveTilesOnGrid: []
+  - {x: 4, y: 5}
+  - {x: 2, y: 3}
+  - {x: 4, y: 2}
+  InActiveTilesOnGrid:
+  - {x: 5, y: 5}
   ShapeTypes:
   - {fileID: 8023244428649145430, guid: 6b0a2c225169f4b09bea1cec4f401379, type: 3}
   - {fileID: 6763353442467283115, guid: 65099b7329be644b18b46f0fee1992a7, type: 3}

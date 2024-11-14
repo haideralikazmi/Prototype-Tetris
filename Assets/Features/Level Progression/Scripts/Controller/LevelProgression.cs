@@ -18,22 +18,12 @@ namespace HAK.Gameplay.LevelProgress
         _view.Initialize(this);
     }
     
-
     void ILevelProgression.CheckIfLevelCompleted()
     {
         if (TrayHandler.CheckIfAllShapesHaveBeenPlaced())
         {
             _view.ShowLevelCompleteScreen();
         }
-    }
-    
-    void ILevelProgression.IncreaseBatteryHealth()
-    {
-        _view.IncreaseBatteryHealth();
-    } 
-    void ILevelProgression.DecreaseBatteryHealth()
-    {
-        _view.DecreaseBatteryHealth();
     }
 
     void ILevelProgression.OnNextButtonClicked()

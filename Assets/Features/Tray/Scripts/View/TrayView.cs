@@ -14,7 +14,6 @@ namespace HAK.Gameplay.Shape
         private TrayViewDataModel _dataModel;
         private BaseShape _currentlySelecedShape;
         private List<Vector3> _spawnPositions;
-        private Vector3 _previousTouchPosition;
         private bool _isDragging;
         
         public override void Initialize(object dataModel)
@@ -116,7 +115,6 @@ namespace HAK.Gameplay.Shape
             {
                 var selectedObject = rayCastHit.collider.gameObject;
                 var shape = selectedObject.GetComponent<BaseShape>();
-                _previousTouchPosition = touchPosition;
                 return shape;
             }
             return null;
@@ -142,7 +140,6 @@ namespace HAK.Gameplay.Shape
                 }
                 _currentlySelecedShape.SetShapePosition(hitPoint,dragSpeed);
             }
-            _previousTouchPosition = touchPosition;
         }
         
         public List<Vector2Int> GetTilesIndicesOfShape()

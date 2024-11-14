@@ -20,16 +20,47 @@ MonoBehaviour:
   ChargingAnimationDuration: 0.6
   PhoneBatteryEmptyTargetFillValue: 0
   PhoneBatteryFullTargetFillValue: 0
-  ShapeDragSpeed: 1.5
-  ShapePickUpSpeed: 0
-  XOffsetonShapePickup: 0
+  ShapeDragSpeed: 100
   YOffsetonShapePickup: 1
-  ZOffsetonShapePickup: 1.25
-  ShapePositionResetDuration: 0.25
-  ShapePlacementDuration: 0.15
+  ZOffsetonShapePickup: 0.75
+  ShapeReturnToTrayDuration: 0.2
+  ShapePlacementDuration: 0.2
   ShapePlacementYOffset: 0.6
+  ShapePlacementAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6064333
+      value: 1.0650098
+      inSlope: -1.4591671
+      outSlope: -1.4591671
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09626705
+      outWeight: 0.14257029
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   ShapeZoomOutScale: 0.6
   ShapeZoomInScale: 1
-  ShapeZoomDuration: 0.1
+  ShapeZoomDuration: 0.125
   LoadingFillDelta: 1
   LoadingBarthreshold: 0.9

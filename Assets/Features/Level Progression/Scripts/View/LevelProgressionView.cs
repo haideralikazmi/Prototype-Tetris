@@ -24,50 +24,10 @@ namespace HAK.UI.LevelProgress
         {
             base.Initialize(model);
             _handler = model as ILevelProgression;
-            //_batteryFillImage = _viewRefs.BatteryFillImage;
             _chargingAnimationDuration = Configs.ViewConfig.ChargingAnimationDuration;
-            //_batteryFillImage.color =  Constants.PhoneCharging.BatteryEmptyColorCode;
-            //_batteryFillImage.fillAmount = Configs.ViewConfig.BatteryEmptyTargetFillValue;
-        }
-        
-        void ChargeBattery()
-        {
-             // _currentBattery.cells[_cellIndex].SetActive(true);
-            _cellIndex++;
-        }
-        void DrainBattery()
-        {
-            _cellIndex--;
-            // _currentBattery.cells[_cellIndex].SetActive(false);
         }
 
         private int _currentLevel;
-        
-        public void EnableBattery(int currentLevel)
-        {
-            var levelData = Configs.LevelConfig.LevelData;
-            var shapeCount = levelData[currentLevel].ShapeTypes.Count;
-            
-            var index = shapeCount-1;
-            foreach (var batteries in _viewRefs.LevelBatteries)
-            {
-                batteries.gameObject.SetActive(false);
-            }
-            // _currentBattery = _viewRefs.LevelBatteries[index];
-            // _currentBattery.gameObject.SetActive(true);
-        }
-
-        private int _cellIndex;
-        public void IncreaseBatteryHealth()
-        {
-            ChargeBattery();
-            _handler.CheckIfLevelCompleted();
-        }
-
-        public void DecreaseBatteryHealth()
-        {
-            DrainBattery();
-        }
 
         public override void Register()
         {
