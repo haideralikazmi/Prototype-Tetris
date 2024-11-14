@@ -1,2 +1,2 @@
 # Prototype-Tetris
-A prototype puzzle game for mobile, inspired by the famous Tetris game
+A prototype puzzle game using tetromino shape as the core design element.
