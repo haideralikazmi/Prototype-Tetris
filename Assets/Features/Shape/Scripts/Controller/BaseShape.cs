@@ -10,6 +10,8 @@ namespace HAK.Gameplay.Shape
         [SerializeField] protected List<Vector2Int> _tilesIndices;
         [SerializeField] private Transform _chargerTransform;
         [SerializeField] private Transform _plugTransform;
+        [SerializeField] private Transform _plugPivotTransform;
+        private Vector3 _plugToShapeOffset;
         private Vector3 _defaultPosition;
 
         private bool _hasBeenPlaced;
@@ -20,6 +22,13 @@ namespace HAK.Gameplay.Shape
             _defaultPosition = defaultPosition;
             _placementPoint = new Vector2Int();
             ZoomOutScale();
+            CalculatePlugToShapeOffset();
+        }
+
+        private void CalculatePlugToShapeOffset()
+        {
+            var pivotlocalPosition = _plugPivotTransform.localPosition; 
+            _plugToShapeOffset = _chargerTransform.TransformVector(pivotlocalPosition);
         }
 
         public List<Vector2Int> GetTileIndex()
@@ -83,15 +92,16 @@ namespace HAK.Gameplay.Shape
             targetPosition.z += zOffset;
             _chargerTransform.position = targetPosition;
         }
-
+        
         public void PlaceShapeOnCell(Vector3 cellPosition)
         {
             var placementDuration = Configs.ViewConfig.ShapePlacementDuration;
             var placementEase = Configs.ViewConfig.ShapePlacementAnimationCurve;
-            cellPosition.y += Configs.ViewConfig.ShapePlacementYOffset;
-            _chargerTransform.DOMove(cellPosition,placementDuration).SetEase(placementEase);
+            var adjustedPosition = cellPosition - _plugToShapeOffset;
+            adjustedPosition.y += Configs.ViewConfig.ShapePlacementYOffset;
+            
+            _chargerTransform.DOMove(adjustedPosition, placementDuration).SetEase(placementEase);
         }
-        
 
         public void ReturnToOriginalPosition()
         {

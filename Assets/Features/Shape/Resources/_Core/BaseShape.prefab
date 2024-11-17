@@ -65,6 +65,7 @@ Transform:
   m_Children:
   - {fileID: 4748610263963163225}
   - {fileID: 5243684503945509481}
+  - {fileID: 2147332700870302760}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,6 +84,7 @@ MonoBehaviour:
   _tilesIndices: []
   _chargerTransform: {fileID: 4042135407720641078}
   _plugTransform: {fileID: 5243684503945509481}
+  _plugPivotTransform: {fileID: 2147332700870302760}
 --- !u!65 &1071252139832924354
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,6 +128,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4748610263963163225}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5554492165284446852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2147332700870302760}
+  m_Layer: 0
+  m_Name: PlugPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2147332700870302760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554492165284446852}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4042135407720641078}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2556147655284661289
 PrefabInstance:
