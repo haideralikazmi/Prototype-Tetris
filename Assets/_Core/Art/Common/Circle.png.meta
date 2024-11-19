@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3ad80fcb0504b418d847bdfa644c20f8
+guid: e7479164b45fc405c80c4be1d17e39bb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,19 +132,40 @@ TextureImporter:
       name: Circle_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 50
-        width: 380
-        height: 379
+        x: 49
+        y: 33
+        width: 1312
+        height: 1312
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 188, y: 193, z: 190, w: 182}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 638, y: 638, z: 638, w: 637}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e2be0183674349cc9bf3ad783eb2d73
-      internalID: 1719267226
+      spriteID: 959294d4aba724fdf82b90f2def4dc10
+      internalID: -1017008799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circle_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 670
+        width: 1316
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 640, y: 0, z: 640, w: 637}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2875c70374fa94193ab9fa3f597df441
+      internalID: -596104761
       vertices: []
       indices: 
       edges: []
@@ -152,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 520b0a2bc562d41df8318da3c7400b89
+    spriteID: a45d2adee17994cd78086493026d6b5e
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Circle_0: 1719267226
+      Circle_1: -596104761
+      Circle_0: -1017008799
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
