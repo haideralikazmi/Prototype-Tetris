@@ -15,7 +15,7 @@ MonoBehaviour:
   HeightDividingFactor: 1.75
   WidthDividingFactor: 1.25
   AmbianceMusicVolume: 0
-  PlugInMovementDuration: 0.1
+  PlugInMovementDuration: 0.175
   PlugInAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -29,17 +29,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.5905336
-      value: 0.9798658
-      inSlope: -1.4591671
-      outSlope: -1.4591671
+      time: 0.49122405
+      value: 1.2099199
+      inSlope: -4.0407686
+      outSlope: -4.0407686
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.09626705
-      outWeight: 0.14257029
+      inWeight: 0.13245942
+      outWeight: 0.04742783
     - serializedVersion: 3
-      time: 0.9717407
-      value: 1.1188049
+      time: 0.969188
+      value: 1.4953333
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -63,13 +63,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6064333
-      value: 1.0650098
-      inSlope: -1.4591671
-      outSlope: -1.4591671
+      time: 0.33966154
+      value: 0.08685151
+      inSlope: -2.0218513
+      outSlope: -2.0218513
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.09626705
+      inWeight: 0.11336873
       outWeight: 0.14257029
     - serializedVersion: 3
       time: 1

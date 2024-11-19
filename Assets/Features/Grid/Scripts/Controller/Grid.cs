@@ -27,16 +27,13 @@ namespace HAK.Gameplay.Grid
         
         public ITray TrayHandler { private get; set; }
         public ILevelProgression LevelProgressionHandler { private get; set; }
-
-        public override void PreInitialize()
-        {
-            var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, 0);
-            _levelData = Configs.LevelConfig.LevelData[currentLevel];
-        }
         
         public override void Initialize()
         {
             base.Initialize();
+            var currentLevel = LevelProgressionHandler.GetCurrentLevel();
+            _levelData = Configs.LevelConfig.LevelData[currentLevel];
+            
             SetData();
             InitializeView();
             GenerateGrid();

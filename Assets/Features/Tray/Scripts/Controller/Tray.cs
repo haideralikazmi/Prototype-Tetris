@@ -3,6 +3,7 @@ using HAK.Gameplay.Grid;
 using UnityEngine;
 using HAK.Core;
 using HAK.Core.SpecialEffects;
+using HAK.Gameplay.LevelProgress;
 
 namespace HAK.Gameplay.Shape
 {
@@ -14,6 +15,7 @@ namespace HAK.Gameplay.Shape
         public IGrid GridHandler { private get; set; }
         public IBaseCamera CameraHandler { private get; set; }
         public ISfx SfxHandler { private get; set; }
+        public ILevelProgression LevelProgressionHandler { private get; set; }
         
         public override void Initialize()
         {
@@ -28,7 +30,7 @@ namespace HAK.Gameplay.Shape
 
         private void SetData()
         {
-            var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, Configs.LevelConfig.DefaultLevel);
+            var currentLevel = LevelProgressionHandler.GetCurrentLevel();
             _shapeList = Configs.LevelConfig.LevelData[currentLevel].ShapeTypes;
         }
 

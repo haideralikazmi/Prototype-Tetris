@@ -22,6 +22,7 @@ namespace HAK.Core
             _levelProgression.TrayHandler = _tray;
             _tray.CameraHandler = _baseCamera;
             _tray.SfxHandler = _sfx;
+            _tray.LevelProgressionHandler = _levelProgression;
         }
     }
 }
