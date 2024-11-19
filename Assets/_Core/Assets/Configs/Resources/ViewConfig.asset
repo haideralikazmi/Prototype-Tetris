@@ -17,9 +17,6 @@ MonoBehaviour:
   BatteryChargingAnimationDuration: 0
   BatteryEmptyTargetFillValue: 0.075
   BatteryFullTargetFillValue: 1
-  ChargingAnimationDuration: 0.6
-  PhoneBatteryEmptyTargetFillValue: 0
-  PhoneBatteryFullTargetFillValue: 0
   ShapeDragSpeed: 100
   YOffsetonShapePickup: 1
   ZOffsetonShapePickup: 0.75
@@ -39,17 +36,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6064333
-      value: 1.0650098
-      inSlope: -1.4591671
-      outSlope: -1.4591671
+      time: 0.49122405
+      value: 1.2099199
+      inSlope: -4.0407686
+      outSlope: -4.0407686
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.09626705
-      outWeight: 0.14257029
+      inWeight: 0.13245942
+      outWeight: 0.04742783
     - serializedVersion: 3
-      time: 1
-      value: 1
+      time: 0.94691014
+      value: 1.0058047
       inSlope: 0
       outSlope: 0
       tangentMode: 0
