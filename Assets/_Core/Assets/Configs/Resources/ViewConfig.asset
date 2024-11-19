@@ -19,7 +19,7 @@ MonoBehaviour:
   BatteryFullTargetFillValue: 1
   ShapeDragSpeed: 100
   YOffsetonShapePickup: 1
-  ZOffsetonShapePickup: 0.75
+  ZOffsetonShapePickup: 0.25
   ShapeReturnToTrayDuration: 0.2
   ShapePlacementDuration: 0.2
   ShapePlacementYOffset: 0.6
