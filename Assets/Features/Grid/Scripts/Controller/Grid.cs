@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using HAK.Gameplay.LevelProgress;
 using HAK.Core;
@@ -118,7 +119,7 @@ namespace HAK.Gameplay.Grid
             }
         }
 
-        void IGrid.OnTrayRelease(BaseShape shape)
+        void IGrid.OnTrayRelease(BaseShape shape, Action<bool> placementOnGrid)
         {
             var plugPosition = shape.GetPlugPosition();
             var isPlugWithinbounds = IsWithinBoundsOfGrid(plugPosition);
@@ -128,16 +129,17 @@ namespace HAK.Gameplay.Grid
                 var cell = _grid[_currentClosestCell.x, _currentClosestCell.y];
                 shape.PlaceShapeOnCell(cell.GetCellPosition());
                 shape.SetPlacementState(true);
-                shape.SetPlugState(false);
                 shape.SetPlacementPoint(_currentClosestCell);
                 SetOccupationStateOfCells(true);
                 RemoveHighlightFromPreviousCells();
+                placementOnGrid?.Invoke(true);
                 return;
             }
+            placementOnGrid?.Invoke(false);
             TrayHandler.MoveShapeToOriginalPosition();
         }
         
-        public void OnReselectionOfShape(List<Vector2Int> shapeTiles)
+        void IGrid.OnReselectionOfShape(List<Vector2Int> shapeTiles)
         {
             for (var i = 0; i < shapeTiles.Count; i++) 
             {

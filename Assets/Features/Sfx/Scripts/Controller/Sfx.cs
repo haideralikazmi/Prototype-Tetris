@@ -47,5 +47,17 @@ namespace HAK.Core.SpecialEffects
             var audioClip = Constants.AudioClip.LevelPassSound;
             PlayAudioClip(audioClip);
         }
+
+        void ISfx.OnShapePickUpFromBoard()
+        {
+            var audioClip = Constants.AudioClip.SwitchPlugOutSound;
+            PlayAudioClip(audioClip);
+        }
+
+        void ISfx.OnShapePlacementOnBoard()
+        {
+            var audioClip = Constants.AudioClip.SwitchPlugInSound;
+            PlayAudioClip(audioClip);
+        }
     }
 }

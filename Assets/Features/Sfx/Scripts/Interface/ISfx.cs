@@ -4,5 +4,7 @@ namespace HAK.Core.SpecialEffects
     {
         void PlayLevelFailSfx();
         void LevelPassSfx();
+        void OnShapePickUpFromBoard();
+        void OnShapePlacementOnBoard();
     }
 }

@@ -13,6 +13,7 @@ namespace HAK.Gameplay.Shape
         [SerializeField] private Transform _plugPivotTransform;
         private Vector3 _plugToShapeOffset;
         private Vector3 _defaultPosition;
+        private Vector3 _plugDefaultPosition;
 
         private bool _hasBeenPlaced;
         private Vector2Int _placementPoint;
@@ -20,6 +21,7 @@ namespace HAK.Gameplay.Shape
         public virtual void Initialize(Vector3 defaultPosition)
         {
             _defaultPosition = defaultPosition;
+            _plugDefaultPosition = _plugTransform.localPosition;
             _placementPoint = new Vector2Int();
             ZoomOutScale();
             CalculatePlugToShapeOffset();
@@ -86,11 +88,12 @@ namespace HAK.Gameplay.Shape
             _chargerTransform.DOScale(scale, duration);
         }
         
-        public void SetShapePosition(Vector3 targetPosition, float movementSpeed)
+        public void SetShapePosition(Vector3 targetPosition)
         {
             var zOffset = Configs.ViewConfig.ZOffsetonShapePickup;
             targetPosition.z += zOffset;
             _chargerTransform.position = targetPosition;
+            PlugOutSequence();
         }
         
         public void PlaceShapeOnCell(Vector3 cellPosition)
@@ -99,8 +102,11 @@ namespace HAK.Gameplay.Shape
             var placementEase = Configs.ViewConfig.ShapePlacementAnimationCurve;
             var adjustedPosition = cellPosition - _plugToShapeOffset;
             adjustedPosition.y += Configs.ViewConfig.ShapePlacementYOffset;
-            
-            _chargerTransform.DOMove(adjustedPosition, placementDuration).SetEase(placementEase);
+
+            var placementSequence = DOTween.Sequence();
+            placementSequence.AppendCallback(PlugInSequence);
+            placementSequence.Join(_chargerTransform.DOMove(adjustedPosition, placementDuration).SetEase(placementEase));
+            placementSequence.Play();
         }
 
         public void ReturnToOriginalPosition()
@@ -108,6 +114,26 @@ namespace HAK.Gameplay.Shape
             var returnDuration = Configs.ViewConfig.ShapeReturnToTrayDuration;
             _chargerTransform.DOMove(_defaultPosition,returnDuration).SetEase(Ease.InOutQuad);
             ZoomOutScale();
+        }
+
+        private void PlugInSequence()
+        {
+            var pluginSequence = DOTween.Sequence();
+            var endPosition = _plugPivotTransform.localPosition;
+            var duration = Configs.GameConfig.PlugInMovementDuration;
+            var ease = Configs.GameConfig.PlugInAnimationCurve;
+            pluginSequence.Append(_plugTransform.DOLocalMove(endPosition, duration).SetEase(ease));
+            pluginSequence.Play();
+        }
+
+        private void PlugOutSequence()
+        {
+            var plugOutSequence = DOTween.Sequence();
+            var endPosition = _plugDefaultPosition;
+            var duration = Configs.GameConfig.PlugOutMovementDuration;
+            var ease = Configs.GameConfig.PlugOutAnimationCurve;
+            plugOutSequence.Append(_plugTransform.DOLocalMove(endPosition, duration).SetEase(ease));
+            plugOutSequence.Play();
         }
     }
 }

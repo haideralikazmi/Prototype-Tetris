@@ -10,6 +10,7 @@ namespace HAK.Gameplay.Shape
     {
         [SerializeField] private TrayViewRefs _viewRefs;
         private ITray _handler;
+        private Camera _camera;
         private List<BaseShape> _shapes;
         private TrayViewDataModel _dataModel;
         private BaseShape _currentlySelecedShape;
@@ -23,17 +24,7 @@ namespace HAK.Gameplay.Shape
             _shapes = new List<BaseShape>();
             _handler = _dataModel.TrayHandler;
             SetSpawnPoints();
-        }
-
-        private void SetSpawnPoints()
-        {
-            _spawnPositions = new List<Vector3>();
-            var spawnTransforms = _viewRefs.SpawnTransforms;
-            var pointCount = spawnTransforms.Count;
-            for (var index = 0; index < pointCount; index++)
-            {
-                _spawnPositions.Add(spawnTransforms[index].position);
-            }
+            SetCamera();
         }
         
         public override void Show()
@@ -108,7 +99,7 @@ namespace HAK.Gameplay.Shape
         
         private BaseShape SelectShape(Vector2 touchPosition)
         {
-            var ray = Camera.main.ScreenPointToRay(touchPosition);
+            var ray = _camera.ScreenPointToRay(touchPosition);
             var  rayCastHit = new RaycastHit();
         
             if (Physics.Raycast(ray, out rayCastHit))
@@ -122,12 +113,10 @@ namespace HAK.Gameplay.Shape
         
         private void PickUpShape(Vector2 touchPosition)
         {
-            if (_currentlySelecedShape == null) return; 
-        
-            var dragSpeed = Configs.ViewConfig.ShapeDragSpeed;
+            if (_currentlySelecedShape == null) return;
             var yOffset = Configs.ViewConfig.YOffsetonShapePickup;
             
-            var ray = Camera.main.ScreenPointToRay(touchPosition);
+            var ray = _camera.ScreenPointToRay(touchPosition);
             var plane = new Plane(Vector3.up, new Vector3(0, _currentlySelecedShape.transform.position.y, 0));
         
             if (plane.Raycast(ray, out float enter))
@@ -138,7 +127,7 @@ namespace HAK.Gameplay.Shape
                     hitPoint.y =  yOffset;
                     _isDragging = true;
                 }
-                _currentlySelecedShape.SetShapePosition(hitPoint,dragSpeed);
+                _currentlySelecedShape.SetShapePosition(hitPoint);
             }
         }
         
@@ -163,6 +152,22 @@ namespace HAK.Gameplay.Shape
         public void ReturnShapeToOriginalPosition()
         {
             _currentlySelecedShape.ReturnToOriginalPosition();
+        }
+        
+        private void SetSpawnPoints()
+        {
+            _spawnPositions = new List<Vector3>();
+            var spawnTransforms = _viewRefs.SpawnTransforms;
+            var pointCount = spawnTransforms.Count;
+            for (var index = 0; index < pointCount; index++)
+            {
+                _spawnPositions.Add(spawnTransforms[index].position);
+            }
+        }
+        
+        private void SetCamera()
+        {
+            _camera = _handler.GetCamera();
         }
     }
 }

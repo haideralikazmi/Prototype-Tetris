@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using HAK.Gameplay.Grid;
 using UnityEngine;
 using HAK.Core;
+using HAK.Core.SpecialEffects;
 
 namespace HAK.Gameplay.Shape
 {
@@ -11,6 +12,8 @@ namespace HAK.Gameplay.Shape
         private List<BaseShape> _shapeList;
         
         public IGrid GridHandler { private get; set; }
+        public IBaseCamera CameraHandler { private get; set; }
+        public ISfx SfxHandler { private get; set; }
         
         public override void Initialize()
         {
@@ -40,7 +43,13 @@ namespace HAK.Gameplay.Shape
         
         void ITray.OnTrayReleased(BaseShape shape)
         {
-            GridHandler.OnTrayRelease(shape);
+            GridHandler.OnTrayRelease(shape, (placement) =>
+            {
+                if (placement)
+                {
+                    SfxHandler.OnShapePlacementOnBoard();
+                }
+            });
         }
 
         void ITray.OnInputDrag(Vector3 position, Vector3 plugPosition)
@@ -57,11 +66,17 @@ namespace HAK.Gameplay.Shape
                 cellsOnGrid.Add(index);
             }
             GridHandler.OnReselectionOfShape(cellsOnGrid);
+            SfxHandler.OnShapePickUpFromBoard();
         }
         
         void ITray.MoveShapeToOriginalPosition()
         {
             _view.ReturnShapeToOriginalPosition();
+        }
+
+        Camera ITray.GetCamera()
+        {
+            return CameraHandler.GetMainCamera();
         }
 
         public List<Vector2Int> GetShapeTileIndices()

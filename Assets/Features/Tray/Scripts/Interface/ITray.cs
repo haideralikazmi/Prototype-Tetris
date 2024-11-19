@@ -12,5 +12,6 @@ namespace HAK.Gameplay.Shape
         int GetShapeCount();
         bool CheckIfAllShapesHaveBeenPlaced();
         void MoveShapeToOriginalPosition();
+        Camera GetCamera();
     }
 }
