@@ -59,8 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9163a79877b944ad6a411e8cbf7fcce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridRectTransform: {fileID: 0}
-  DefaultTile: {fileID: 7026010840590635813, guid: 180adff3411534132b296d719e7fa068, type: 3}
+  GridTransform: {fileID: 9064875809769467309}
 --- !u!1 &7222157234347240672
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,6 @@ namespace HAK.UI.LevelProgress
         {
             base.Initialize(model);
             _handler = model as ILevelProgression;
-            _chargingAnimationDuration = Configs.ViewConfig.ChargingAnimationDuration;
         }
 
         private int _currentLevel;
@@ -56,6 +55,5 @@ namespace HAK.UI.LevelProgress
             _viewRefs.CompletionScreen.SetActive(false);
             Unregister();
         }
-
     }
 }

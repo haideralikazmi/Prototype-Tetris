@@ -1,7 +1,8 @@
-namespace Features.Sfx.Scripts.Interface
+namespace HAK.Core.SpecialEffects
 {
-    public class ISfc
+    public interface ISfx
     {
-        
+        void PlayLevelFailSfx();
+        void LevelPassSfx();
     }
 }
