@@ -181,18 +181,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f7a8ba9b96a134af2a294a5949877b09, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f7a8ba9b96a134af2a294a5949877b09, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f7a8ba9b96a134af2a294a5949877b09, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d2ffe7c92556a46d7b537752d1cf8351, type: 2}
     - target: {fileID: 919132149155446097, guid: f7a8ba9b96a134af2a294a5949877b09, type: 3}
       propertyPath: m_Name
       value: I-Shape
