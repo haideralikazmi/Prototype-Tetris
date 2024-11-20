@@ -15,11 +15,6 @@ namespace HAK.UI.LevelProgress
 
         private ILevelProgression _handler;
         
-        private float _fillValue;
-        private float _chargingAnimationDuration;
-        private Image _batteryFillImage;
-        private Battery _currentBattery;
-        
         public override void Initialize(object model=null)
         {
             base.Initialize(model);

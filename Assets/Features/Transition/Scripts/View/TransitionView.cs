@@ -23,7 +23,7 @@ namespace HAK.UI.Transition
         
         public void SetProgressState(float progress,Action callback = null)
         {
-            var fillDelta = Configs.ViewConfig.HomeFillDelta;
+            var fillDelta = Configs.ViewConfigs.HomeFillDelta;
             var fillAmount = Mathf.MoveTowards(_viewRefs.LoadingBarFillImage.fillAmount, progress,
                 fillDelta * Time.deltaTime);
             _viewRefs.LoadingBarFillImage.fillAmount = fillAmount;

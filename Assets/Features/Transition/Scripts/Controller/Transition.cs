@@ -28,7 +28,7 @@ namespace HAK.UI.Transition
         {
             while (!_sceneLoadingOperation.isDone)
             {
-                _target =  Mathf.Clamp01(_sceneLoadingOperation.progress/ Configs.ViewConfig.HomeBarthreshold);
+                _target =  Mathf.Clamp01(_sceneLoadingOperation.progress/ Configs.ViewConfigs.HomeBarthreshold);
                 _view.SetProgressState(_target, ActivateScene);
                 yield return null;
             }

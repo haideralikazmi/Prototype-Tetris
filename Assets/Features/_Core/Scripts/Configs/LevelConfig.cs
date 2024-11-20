@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using HAK.Gameplay.Grid;
 
-public partial class LevelConfig
+public partial class LevelConfigs
 {
     public int DefaultLevel;
     public int DefaultGridWidth;

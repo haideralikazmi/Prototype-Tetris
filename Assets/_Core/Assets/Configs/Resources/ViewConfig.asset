@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HomeFillDelta: 1
   HomeBarthreshold: 0.9
-  BatteryChargingAnimationDuration: 0
-  BatteryEmptyTargetFillValue: 0.075
-  BatteryFullTargetFillValue: 1
-  ShapeDragSpeed: 100
+  ShapeDragSpeed: 0
   YOffsetonShapePickup: 1
-  ZOffsetonShapePickup: 0.25
+  ZOffsetonShapePickup: 1.25
   ShapeReturnToTrayDuration: 0.2
   ShapePlacementDuration: 0.2
   ShapePlacementYOffset: 0.6

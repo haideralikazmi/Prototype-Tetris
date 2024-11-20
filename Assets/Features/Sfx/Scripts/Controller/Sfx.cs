@@ -40,7 +40,7 @@ namespace HAK.Core.SpecialEffects
             var bgMusic = LoadAudioClip(clip);
             _gameplayAudioSource.loop = true;
             _gameplayAudioSource.clip = bgMusic;
-            _gameplayAudioSource.volume = Configs.GameConfig.AmbianceMusicVolume;
+            _gameplayAudioSource.volume = Configs.GameConfigs.AmbianceMusicVolume;
             _gameplayAudioSource.Play();
         }
 
@@ -60,14 +60,14 @@ namespace HAK.Core.SpecialEffects
         {
             var audioClip = Constants.AudioClip.SwitchPlugOutSound;
             PlayAudioClip(audioClip);
-            _hapticsController.PlayRigidImpact();
+            _hapticsController.PlaySoftImpact();
         }
 
         void ISfx.OnShapePlacementOnBoard()
         {
             var audioClip = Constants.AudioClip.SwitchPlugInSound;
             PlayAudioClip(audioClip);
-            _hapticsController.PlayMediumImpact();
+            _hapticsController.PlayRigidImpact();
         }
     }
 }
