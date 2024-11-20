@@ -7,10 +7,18 @@ namespace HAK.Core.SpecialEffects
     {
         [SerializeField] protected AudioSource _bgAudioSource;
         [SerializeField] private AudioSource _gameplayAudioSource;
+        private HapticsController _hapticsController;
 
         public override void Initialize()
         {
+            InitializeHaptics();
             PlayAmbiance();
+        }
+
+        private void InitializeHaptics()
+        {
+            _hapticsController = new HapticsController();
+            _hapticsController.InitializeVibrations();
         }
 
         private AudioClip LoadAudioClip(string audioClipName)
@@ -52,12 +60,14 @@ namespace HAK.Core.SpecialEffects
         {
             var audioClip = Constants.AudioClip.SwitchPlugOutSound;
             PlayAudioClip(audioClip);
+            _hapticsController.PlayRigidImpact();
         }
 
         void ISfx.OnShapePlacementOnBoard()
         {
             var audioClip = Constants.AudioClip.SwitchPlugInSound;
             PlayAudioClip(audioClip);
+            _hapticsController.PlayMediumImpact();
         }
     }
 }
