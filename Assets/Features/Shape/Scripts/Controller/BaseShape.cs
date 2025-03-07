@@ -92,7 +92,6 @@ namespace HAK.Gameplay.Shape
         public void SetShapePosition(Vector3 targetPosition)
         {
             var zOffset = Configs.ViewConfigs.ZOffsetonShapePickup;
-            var speed = Configs.ViewConfigs.ZOffsetonShapePickup;
             targetPosition.z += zOffset;
             _chargerTransform.position = targetPosition;
             PlugOutSequence();;

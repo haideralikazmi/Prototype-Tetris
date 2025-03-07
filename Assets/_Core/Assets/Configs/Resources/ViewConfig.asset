@@ -16,7 +16,7 @@ MonoBehaviour:
   HomeBarthreshold: 0.9
   ShapeDragSpeed: 0
   YOffsetonShapePickup: 1
-  ZOffsetonShapePickup: 1.25
+  ZOffsetonShapePickup: 2
   ShapeReturnToTrayDuration: 0.2
   ShapePlacementDuration: 0.2
   ShapePlacementYOffset: 0.6
@@ -53,8 +53,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  ShapeZoomOutScale: 0.55
+  ShapeZoomOutScale: 0.6
   ShapeZoomInScale: 1
-  ShapeZoomDuration: 0.125
+  ShapeZoomDuration: 0.1
   LoadingFillDelta: 1
   LoadingBarthreshold: 0.9
