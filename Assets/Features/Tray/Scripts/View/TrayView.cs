@@ -114,7 +114,7 @@ namespace HAK.Gameplay.Shape
         private void PickUpShape(Vector2 touchPosition)
         {
             if (_currentlySelecedShape == null) return;
-            var yOffset = Configs.ViewConfig.YOffsetonShapePickup;
+            var yOffset = Configs.ViewConfigs.YOffsetonShapePickup;
             
             var ray = _camera.ScreenPointToRay(touchPosition);
             var plane = new Plane(Vector3.up, new Vector3(0, _currentlySelecedShape.transform.position.y, 0));

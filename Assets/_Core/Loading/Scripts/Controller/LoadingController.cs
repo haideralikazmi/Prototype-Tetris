@@ -30,7 +30,7 @@ namespace HAK.Loading
         {
             while (!_sceneLoadingOperation.isDone)
             {
-               _target =  Mathf.Clamp01(_sceneLoadingOperation.progress/ Configs.ViewConfig.LoadingBarthreshold);
+               _target =  Mathf.Clamp01(_sceneLoadingOperation.progress/ Configs.ViewConfigs.LoadingBarthreshold);
                ViewHandler.SetProgressState(_target, Initialize);
                 yield return null;
             }

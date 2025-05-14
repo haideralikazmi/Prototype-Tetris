@@ -17,7 +17,7 @@ namespace HAK.Loading
 
         void ILoadingView.SetProgressState(float progress,Action callback = null)
         {
-            var fillDelta = Configs.ViewConfig.LoadingFillDelta;
+            var fillDelta = Configs.ViewConfigs.LoadingFillDelta;
             
             var fillAmount = Mathf.MoveTowards(_viewRefs.loadingBarFillImage.fillAmount, progress,
                 fillDelta * Time.deltaTime);

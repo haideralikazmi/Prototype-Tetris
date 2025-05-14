@@ -31,7 +31,7 @@ namespace HAK.Gameplay.Shape
         private void SetData()
         {
             var currentLevel = LevelProgressionHandler.GetCurrentLevel();
-            _shapeList = Configs.LevelConfig.LevelData[currentLevel].ShapeTypes;
+            _shapeList = Configs.LevelConfigs.LevelData[currentLevel].ShapeTypes;
         }
 
         private void InitializeView()

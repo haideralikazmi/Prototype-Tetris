@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public partial class ViewConfig
+public partial class ViewConfigs
 {
    [Header("Loading View")]
    public float LoadingFillDelta;

@@ -32,7 +32,7 @@ namespace HAK.Gameplay.Grid
         {
             base.Initialize();
             var currentLevel = LevelProgressionHandler.GetCurrentLevel();
-            _levelData = Configs.LevelConfig.LevelData[currentLevel];
+            _levelData = Configs.LevelConfigs.LevelData[currentLevel];
             
             SetData();
             InitializeView();
@@ -44,8 +44,8 @@ namespace HAK.Gameplay.Grid
         {
             _highlightedCells = new List<Cell>();
             _currentClosestCell = new Vector2Int();
-            _gridWidth = Configs.LevelConfig.DefaultGridWidth;
-            _gridHeight = Configs.LevelConfig.DefaultGridHeight;
+            _gridWidth = Configs.LevelConfigs.DefaultGridWidth;
+            _gridHeight = Configs.LevelConfigs.DefaultGridHeight;
             _row0ffset = _baseTile.width;
             _column0ffset = _baseTile.height;
             _switchesOnGrid = _levelData.SwitchesOnGrid;

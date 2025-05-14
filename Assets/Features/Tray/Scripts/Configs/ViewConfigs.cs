@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public partial class ViewConfig
+public partial class ViewConfigs
 {
         [Header("Tray View")] 
         public float ShapeDragSpeed;

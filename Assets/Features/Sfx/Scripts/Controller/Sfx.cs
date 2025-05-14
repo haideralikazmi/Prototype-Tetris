@@ -32,7 +32,7 @@ namespace HAK.Core.SpecialEffects
             var bgMusic = LoadAudioClip(clip);
             _gameplayAudioSource.loop = true;
             _gameplayAudioSource.clip = bgMusic;
-            _gameplayAudioSource.volume = Configs.GameConfig.AmbianceMusicVolume;
+            _gameplayAudioSource.volume = Configs.GameConfigs.AmbianceMusicVolume;
             _gameplayAudioSource.Play();
         }
 

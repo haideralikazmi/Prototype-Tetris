@@ -10,6 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb8c8367f3a854c75800a861cc8b1cfe, type: 3}
-  m_Name: AppConfig
+  m_Name: AppConfigs
   m_EditorClassIdentifier: 
-  TestConfigs: Testing

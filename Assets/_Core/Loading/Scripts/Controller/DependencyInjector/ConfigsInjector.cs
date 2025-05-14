@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ConfigsInjector : MonoBehaviour
 {
-    [SerializeField] private AppConfig _appConfigs;
-    [SerializeField] private GameConfig _gameConfig;
-    [SerializeField] private ViewConfig _viewConfig;
-    [SerializeField] private LevelConfig _levelConfig;
+    [SerializeField] private AppConfigs _appConfigs;
+    [SerializeField] private GameConfigs _gameConfigs;
+    [SerializeField] private ViewConfigs _viewConfigs;
+    [SerializeField] private LevelConfigs _levelConfigs;
 
     private void Awake()
     {
@@ -15,9 +15,9 @@ public class ConfigsInjector : MonoBehaviour
 
     public void InjectConfigs()
     {
-        Configs.AppConfig = _appConfigs;
-        Configs.GameConfig = _gameConfig;
-        Configs.ViewConfig = _viewConfig;
-        Configs.LevelConfig = _levelConfig;
+        Configs.AppConfigs = _appConfigs;
+        Configs.GameConfigs = _gameConfigs;
+        Configs.ViewConfigs = _viewConfigs;
+        Configs.LevelConfigs = _levelConfigs;
     }
 }

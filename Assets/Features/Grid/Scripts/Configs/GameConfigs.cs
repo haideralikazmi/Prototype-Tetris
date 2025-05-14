@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public partial class GameConfig
+public partial class GameConfigs
 {
     [Header("Grid")]
     public float HeightDividingFactor;

@@ -20,8 +20,8 @@ namespace HAK.UI.Grid
         {
             var gridWidthPixels = _model.GridWidth * _model.CellOffset;
             var gridHeightPixels = _model.GridHeight * _model.CellOffset;
-            var heightFactor = Configs.GameConfig.HeightDividingFactor;
-            var widthFactor = Configs.GameConfig.WidthDividingFactor;
+            var heightFactor = Configs.GameConfigs.HeightDividingFactor;
+            var widthFactor = Configs.GameConfigs.WidthDividingFactor;
             
             _startingPosition = new Vector2(Screen.width / widthFactor - gridWidthPixels / widthFactor, Screen.height / heightFactor - gridHeightPixels / heightFactor);
         }

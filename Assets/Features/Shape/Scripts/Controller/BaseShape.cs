@@ -76,21 +76,21 @@ namespace HAK.Gameplay.Shape
 
         private void ZoomInScale()
         {
-            var scale = Configs.ViewConfig.ShapeZoomInScale;
-            var duration = Configs.ViewConfig.ShapeZoomDuration;
+            var scale = Configs.ViewConfigs.ShapeZoomInScale;
+            var duration = Configs.ViewConfigs.ShapeZoomDuration;
             _chargerTransform.DOScale(scale, duration);
         }
         
         private void ZoomOutScale()
         {
-            var scale = Configs.ViewConfig.ShapeZoomOutScale;
-            var duration = Configs.ViewConfig.ShapeZoomDuration;
+            var scale = Configs.ViewConfigs.ShapeZoomOutScale;
+            var duration = Configs.ViewConfigs.ShapeZoomDuration;
             _chargerTransform.DOScale(scale, duration);
         }
         
         public void SetShapePosition(Vector3 targetPosition)
         {
-            var zOffset = Configs.ViewConfig.ZOffsetonShapePickup;
+            var zOffset = Configs.ViewConfigs.ZOffsetonShapePickup;
             targetPosition.z += zOffset;
             _chargerTransform.position = targetPosition;
             PlugOutSequence();
@@ -98,10 +98,10 @@ namespace HAK.Gameplay.Shape
         
         public void PlaceShapeOnCell(Vector3 cellPosition)
         {
-            var placementDuration = Configs.ViewConfig.ShapePlacementDuration;
-            var placementEase = Configs.ViewConfig.ShapePlacementAnimationCurve;
+            var placementDuration = Configs.ViewConfigs.ShapePlacementDuration;
+            var placementEase = Configs.ViewConfigs.ShapePlacementAnimationCurve;
             var adjustedPosition = cellPosition - _plugToShapeOffset;
-            adjustedPosition.y += Configs.ViewConfig.ShapePlacementYOffset;
+            adjustedPosition.y += Configs.ViewConfigs.ShapePlacementYOffset;
 
             var placementSequence = DOTween.Sequence();
             placementSequence.AppendCallback(PlugInSequence);
@@ -111,7 +111,7 @@ namespace HAK.Gameplay.Shape
 
         public void ReturnToOriginalPosition()
         {
-            var returnDuration = Configs.ViewConfig.ShapeReturnToTrayDuration;
+            var returnDuration = Configs.ViewConfigs.ShapeReturnToTrayDuration;
             _chargerTransform.DOMove(_defaultPosition,returnDuration).SetEase(Ease.InOutQuad);
             ZoomOutScale();
         }
@@ -120,8 +120,8 @@ namespace HAK.Gameplay.Shape
         {
             var pluginSequence = DOTween.Sequence();
             var endPosition = _plugPivotTransform.localPosition;
-            var duration = Configs.GameConfig.PlugInMovementDuration;
-            var ease = Configs.GameConfig.PlugInAnimationCurve;
+            var duration = Configs.GameConfigs.PlugInMovementDuration;
+            var ease = Configs.GameConfigs.PlugInAnimationCurve;
             pluginSequence.Append(_plugTransform.DOLocalMove(endPosition, duration).SetEase(ease));
             pluginSequence.Play();
         }
@@ -130,8 +130,8 @@ namespace HAK.Gameplay.Shape
         {
             var plugOutSequence = DOTween.Sequence();
             var endPosition = _plugDefaultPosition;
-            var duration = Configs.GameConfig.PlugOutMovementDuration;
-            var ease = Configs.GameConfig.PlugOutAnimationCurve;
+            var duration = Configs.GameConfigs.PlugOutMovementDuration;
+            var ease = Configs.GameConfigs.PlugOutAnimationCurve;
             plugOutSequence.Append(_plugTransform.DOLocalMove(endPosition, duration).SetEase(ease));
             plugOutSequence.Play();
         }

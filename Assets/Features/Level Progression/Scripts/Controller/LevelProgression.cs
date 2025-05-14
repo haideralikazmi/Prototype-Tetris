@@ -53,7 +53,7 @@ namespace HAK.Gameplay.LevelProgress
     {
         var currentLevel = GetCurrentLevelCount();
         currentLevel++;
-        var levelCount = Configs.LevelConfig.LevelData.Count;
+        var levelCount = Configs.LevelConfigs.LevelData.Count;
         if (currentLevel >= levelCount)
         {
             currentLevel = 0;
@@ -63,7 +63,7 @@ namespace HAK.Gameplay.LevelProgress
             
     private int GetCurrentLevelCount()
     {
-        var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, Configs.LevelConfig.DefaultLevel);
+        var currentLevel = PlayerPrefs.GetInt(Constants.LevelPrefKeys.CurrentLevel, Configs.LevelConfigs.DefaultLevel);
         return currentLevel;
     }
     private void SetLevel(int level)

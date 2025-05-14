@@ -9,7 +9,7 @@ namespace HAK.Core
         [MenuItem("HAK/Configs/AppConfig")]
         private static void ShowAppConfig()
         {
-            var appConfig = Resources.Load<AppConfig>(Constants.ConfigPath.AppConfigPath);
+            var appConfig = Resources.Load<AppConfigs>(Constants.ConfigPath.AppConfigPath);
             if (appConfig != null)
             {
                 Selection.activeObject = appConfig;
@@ -21,7 +21,7 @@ namespace HAK.Core
         [MenuItem("HAK/Configs/GameConfig")]
         private static void ShowGameConfig()
         {
-            var appConfig = Resources.Load<GameConfig>(Constants.ConfigPath.GameConfigsPath);
+            var appConfig = Resources.Load<GameConfigs>(Constants.ConfigPath.GameConfigsPath);
             if (appConfig != null)
             {
                 Selection.activeObject = appConfig;
@@ -33,7 +33,7 @@ namespace HAK.Core
         [MenuItem("HAK/Configs/ViewConfig")]
         private static void ShowViewConfig()
         {
-            var appConfig = Resources.Load<ViewConfig>(Constants.ConfigPath.ViewConfigsPath);
+            var appConfig = Resources.Load<ViewConfigs>(Constants.ConfigPath.ViewConfigsPath);
             if (appConfig != null)
             {
                 Selection.activeObject = appConfig;
@@ -45,7 +45,7 @@ namespace HAK.Core
         [MenuItem("HAK/Configs/LevelConfig")]
         private static void ShowLevelConfig()
         {
-            var levelConfig = Resources.Load<LevelConfig>(Constants.ConfigPath.LevelConfigsPath);
+            var levelConfig = Resources.Load<LevelConfigs>(Constants.ConfigPath.LevelConfigsPath);
             if (levelConfig != null)
             {
                 Selection.activeObject = levelConfig;
